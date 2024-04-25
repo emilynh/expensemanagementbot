@@ -3,28 +3,28 @@
 ## Tính năng
 
 1. **Cấu hình Ban đầu:**
-   - Khởi tạo các biến trong `parameters.gs` như mã thông báo bot Telegram, ID Google Sheets, URL WebApp, và các cài đặt khác. Bạn cũng cần phải cấu hình đối tượng `categories` chứa các danh mục và phần chi phí.
+   - Khởi tạo các biến trong `parameters.gs` như mã thông báo bot Telegram, ID Google Sheets, URL WebApp, và các cài đặt khác. Bạn có thể chỉnh sửa `categories` chứa các danh mục và phân loại chi tiêu.
 
 2. **Xử lý yêu cầu POST:**
    - Hàm `doPost` được gọi khi bot nhận một yêu cầu POST từ Telegram. Hàm này phân tích nội dung của yêu cầu và gửi yêu cầu đến trình xử lý phù hợp dựa trên loại hành động (callback hoặc tin nhắn).
 
 3. **Quản lý hành động callback:**
-   - Hàm `handleCallback` xử lý các hành động liên quan đến các nút trên bàn phím trên Telegram (gọi là callbacks). Tùy thuộc vào loại callback, mã thực hiện các hành động như xóa một chi phí, chọn một danh mục hoặc phần.
+   - Hàm `handleCallback` xử lý các hành động liên quan đến các nút trên bàn phím trên Telegram (gọi là callbacks). Tùy thuộc vào loại callback, mã thực hiện các hành động như xóa một chi phí, chọn một danh mục hoặc phân loại.
 
 4. **Xử lý tin nhắn:**
-   - Hàm `handleMessage` xử lý tin nhắn được gửi bởi người dùng tới bot. Tùy thuộc vào nội dung của tin nhắn, bot hiển thị một tin nhắn chào mừng, liệt kê các lệnh có sẵn, bắt đầu quá trình thêm hoặc xóa một chi phí, hoặc xử lý việc nhập giá của một chi phí.
+   - Hàm `handleMessage` xử lý tin nhắn được gửi bởi người dùng tới bot. Tùy thuộc vào nội dung của tin nhắn, bot hiển thị một tin nhắn chào mừng, liệt kê các lệnh có sẵn, bắt đầu quá trình thêm hoặc xóa một khoản chi, hoặc xử lý việc nhập giá của một khoản chi.
 
 5. **Thêm một chi phí:**
-   - Khi chọn nút để thêm một chi phí, bot hiển thị các danh mục có sẵn. Người dùng sau đó chọn một danh mục và sau đó là một phần. Cuối cùng, bot yêu cầu người dùng nhập giá của chi phí và lưu nó trong bảng tính.
+   - Khi chọn nút để thêm một chi phí, bot hiển thị các danh mục có sẵn. Người dùng sau đó chọn một danh mục và sau đó là một phân loại. Cuối cùng, bot yêu cầu người dùng nhập khoản chi và lưu nó trong bảng tính.
 
 6. **Xóa một chi phí:**
-   - Khi chọn nút để xóa một chi phí, bot hiển thị 5 chi phí cuối cùng được nhập và cho phép người dùng chọn một chi phí để xóa. Sau khi được chọn, bot xóa chi phí đó khỏi bảng tính.
+   - Khi chọn nút để xóa một chi phí, bot hiển thị 5 chi phí cuối cùng được nhập và cho phép người dùng chọn một khoản chi để xóa. Sau khi được chọn, bot xóa khoản chi đó khỏi bảng tính.
 
 7. **Tóm tắt chi phí:**
    - Bot cung cấp một tóm tắt về chi phí theo danh mục và theo tháng, hiển thị tổng số tiền của từng danh mục và cho từng tháng (cũng như tần suất lớn nhất của các danh mục và phần).
 
 8. **Thiết lập ngôn ngữ:**
-   - Hỗ trợ đa ngôn ngữ và có thể thay đổi ngôn ngữ của bot. Nếu bạn không tìm thấy ngôn ngữ của mình và muốn đóng góp, hãy mở một yêu cầu kéo.
+   - Hỗ trợ ngôn ngữ tiếng Anh và tiếng Việt và có thể thay đổi ngôn ngữ của bot.
 
 9. **Truy cập an toàn thông qua kiểm soát ID:**
    - Bot được thiết kế để chỉ cho phép một người dùng cụ thể tương tác với nó, dựa trên ID người dùng được cung cấp bởi Telegram và cấu hình trong `parameters.gs`.
@@ -79,7 +79,7 @@
 - Nhấp vào biểu tượng chỉnh sửa (bút) bên cạnh triển khai "WebAppDeploy".
 - Nhấp vào "Phiên bản" và sau đó "Phiên bản mới" để tạo một phiên bản mới của triển khai.
 
-## 9. Thực hiện các chức năng setWebhook
+### 9. Thực hiện các chức năng setWebhook
 
 - Trong trình soạn thảo Apps Script, nhấp vào menu "Run" và chọn "Run function" -> `setWebhook`.
 - Chức năng này sẽ thiết lập webhook cho bot của bạn, cho phép nó nhận các cập nhật từ Telegram.
