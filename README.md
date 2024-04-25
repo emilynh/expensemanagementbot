@@ -32,25 +32,25 @@
 
 ## Cài đặt
 
-### 1. Tạo một Google Sheet và sao chép ID của Trang tính
+1. Tạo một Google Sheet và sao chép ID của Trang tính
 
 - Đi đến Google Drive và tạo một Trang tính Google mới.
 - Sao chép ID duy nhất từ URL của trang tính. ID là một chuỗi dài các chữ cái và số sau `/spreadsheets/d/`.
 
-### 2. Tạo một bot Telegram và lấy mã thông báo và ID người dùng Telegram của bạn
+2. Tạo một bot Telegram và lấy mã thông báo và ID người dùng Telegram của bạn
 
 - Mở Telegram và tìm kiếm bot @BotFather.
 - Bắt đầu cuộc trò chuyện với @BotFather và sử dụng lệnh `/newbot` để tạo một bot mới.
 - Làm theo hướng dẫn và lấy mã thông báo bot được tạo ra.
 - Đi đến Bot getUserInfo và lấy ID người dùng Telegram của bạn.
 
-### 3. Thêm tất cả các tệp .gs trong kho lưu trữ này vào Apps Script
+3. Thêm tất cả các tệp .gs trong kho lưu trữ này vào Apps Script
 
 - Mở Bảng tính Google được tạo trong bước 1.
 - Đi đến "Extensions" trong menu và chọn "Apps Script".
 - Nhập tất cả các tập lệnh từ kho lưu trữ này vào Apps Script.
 
-### 4. Triển khai App Script như một Ứng dụng Web
+4. Triển khai App Script như một Ứng dụng Web
 
 - Nhấp vào menu "Deploy" trong trình soạn thảo Apps Script và chọn "Deploy as web app".
 - Chọn "Web application" làm loại triển khai.
@@ -60,26 +60,26 @@
 - Nhấp vào "Deploy" để triển khai ứng dụng web.
 - Một hộp thoại sẽ yêu cầu bạn xem lại các quyền cần thiết bởi ứng dụng. Nhấp vào "Authorize access" để tiếp tục.
 
-### 5. Lưu URL của Ứng dụng Web được tạo ra
+5. Lưu URL của Ứng dụng Web được tạo ra
 
 - Sau khi ủy quyền, bạn sẽ nhận được một URL Ứng dụng Web. Lưu URL này để sử dụng sau này.
 
-### 6. Tùy chỉnh App Script
+6. Tùy chỉnh App Script
 
 - Mở tệp `parameters.gs` trong trình soạn thảo Apps Script.
 - Chèn vào các biến `TELEGRAM_TOKEN`, `SHEET_ID`, `SHEET_NAME`, `USER_ID` và `WEBAPP_URL` các mã thông báo/ID đã lưu trong các bước trước. Nếu cần, chỉnh sửa múi giờ (`TIMEZONE`).
 
-### 7. Tùy chỉnh các danh mục và phần
+7. Tùy chỉnh các danh mục và phần
 
 - Cập nhật đối tượng `categories` trong tệp `parameters.gs` để tùy chỉnh các danh mục và phần theo sở thích của bạn.
 
-### 8. Cập nhật Triển khai App Script
+8. Cập nhật Triển khai App Script
 
 - Trong trình soạn thảo Apps Script, đi đến menu "Deploy" và chọn "Manage deployments."
 - Nhấp vào biểu tượng chỉnh sửa (bút) bên cạnh triển khai "WebAppDeploy".
 - Nhấp vào "Phiên bản" và sau đó "Phiên bản mới" để tạo một phiên bản mới của triển khai.
 
-### 9. Thực hiện các chức năng setWebhook
+9. Thực hiện các chức năng setWebhook
 
 - Trong trình soạn thảo Apps Script, nhấp vào menu "Run" và chọn "Run function" -> `setWebhook`.
 - Chức năng này sẽ thiết lập webhook cho bot của bạn, cho phép nó nhận các cập nhật từ Telegram.
